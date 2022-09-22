@@ -8,8 +8,9 @@
     @Html.ActionLink("Home", "List", "Product", null,
     new
     {
-        @class = horizontal ? "btn btn-default btn-sm" :
+        @class = horizontal ? "btn btn-default btn-sm" + (ViewBag.SelectedCategory == null || ViewBag.SelectedCategory == "" ? " btn-primary" : "") :
     "btn btn-block btn-default btn-lg"
+    + (ViewBag.SelectedCategory == null || ViewBag.SelectedCategory == "" ? " btn-primary" : "")
     })
     @foreach (var link in Model)
     {
